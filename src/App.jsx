@@ -2,15 +2,13 @@ import React, { useEffect } from 'react';
 import './App.css';
 import logo from './logo.png';
 
-
-
 function App() {
   useEffect(() => {
     // Embed Chatbot script dynamically
     const script1 = document.createElement('script');
     script1.innerHTML = `
       window.embeddedChatbotConfig = {
-        chatbotId: "KJqcUc0do5QhwGZB4qyWX",
+        chatbotId: "QnX8OnPRq9wZ7sxTdPMm5",
         domain: "www.chatbase.co"
       };
     `;
@@ -19,7 +17,7 @@ function App() {
     const script2 = document.createElement('script');
     script2.src = "https://www.chatbase.co/embed.min.js";
     script2.async = true;
-    script2.setAttribute("chatbotId", "KJqcUc0do5QhwGZB4qyWX");
+    script2.setAttribute("chatbotId", "QnX8OnPRq9wZ7sxTdPMm5");
     script2.setAttribute("domain", "www.chatbase.co");
     script2.defer = true;
     document.body.appendChild(script2);
