@@ -131,8 +131,8 @@ body {
 
 /* Chatbot Button Styling */
 .chatbase-chatbot-container .chatbot-button {
-  width: 90px !important; /* Increased width */
-  height: 90px !important; /* Increased height */
+  width: 200px !important; /* Increased width */
+  height: 200px !important; /* Increased height */
   font-size: 1.5rem !important; /* Increase font size if there is text */
   border-radius: 50% !important; /* Make it circular */
   display: flex;
