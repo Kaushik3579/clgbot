@@ -4,23 +4,35 @@ import logo from './logo.png';
 
 function App() {
   useEffect(() => {
-    // Embed Chatbot script dynamically
-    const script1 = document.createElement('script');
-    script1.innerHTML = `
-      window.embeddedChatbotConfig = {
-        chatbotId: "QnX8OnPRq9wZ7sxTdPMm5",
-        domain: "www.chatbase.co"
-      };
-    `;
-    document.body.appendChild(script1);
+    // Remove any existing chatbot div to prevent duplicates
+    const existingDiv = document.getElementById('aichatbot');
+    if (existingDiv) {
+      existingDiv.remove();
+    }
 
-    const script2 = document.createElement('script');
-    script2.src = "https://www.chatbase.co/embed.min.js";
-    script2.async = true;
-    script2.setAttribute("chatbotId", "QnX8OnPRq9wZ7sxTdPMm5");
-    script2.setAttribute("domain", "www.chatbase.co");
-    script2.defer = true;
-    document.body.appendChild(script2);
+    // Embed the new Chatbot script dynamically
+    const chatbotDiv = document.createElement('div');
+    chatbotDiv.id = 'aichatbot';
+    document.body.appendChild(chatbotDiv);
+
+    const chatbotConfigScript = document.createElement('script');
+    chatbotConfigScript.innerHTML = `
+      (function(w, d, s, ...args) {
+        var div = d.createElement('div');
+        div.id = 'aichatbot';
+        d.body.appendChild(div);
+        w.chatbotConfig = args;
+        var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s);
+        j.defer = true;
+        j.type = 'module';
+        j.src = 'https://aichatbot.sendbird.com/index.js';
+        f.parentNode.insertBefore(j, f);
+      })(window, document, 'script', '06465C10-5987-4300-B890-A2AAE4493C02', 'Ldanw4-BXoV-evlVRxmIa', {
+        apiHost: 'https://api-cf-ap-5.sendbird.com'
+      });
+    `;
+    document.body.appendChild(chatbotConfigScript);
   }, []);
 
   return (
