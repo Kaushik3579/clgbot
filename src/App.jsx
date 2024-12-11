@@ -17,7 +17,7 @@ function App() {
 
     const chatbotConfigScript = document.createElement('script');
     chatbotConfigScript.innerHTML = `
-      (function(w, d, s, ...args) {
+      !function(w, d, s, ...args){
         var div = d.createElement('div');
         div.id = 'aichatbot';
         d.body.appendChild(div);
@@ -28,8 +28,8 @@ function App() {
         j.type = 'module';
         j.src = 'https://aichatbot.sendbird.com/index.js';
         f.parentNode.insertBefore(j, f);
-      })(window, document, 'script', '06465C10-5987-4300-B890-A2AAE4493C02', 'Ldanw4-BXoV-evlVRxmIa', {
-        apiHost: 'https://api-cf-ap-5.sendbird.com'
+      }(window, document, 'script', '6AB1BB72-32FD-48CA-B5FB-063B6F8EC498', 'I9pPkvSdmUJqRuSVw7k51', {
+        apiHost: 'https://api-cf-ap-5.sendbird.com',
       });
     `;
     document.body.appendChild(chatbotConfigScript);
